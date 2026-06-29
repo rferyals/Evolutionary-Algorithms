@@ -2,7 +2,6 @@
 
 Evolves neural network controllers to soft-land a spacecraft in OpenAI Gymnasium's **LunarLander-v3** environment using a custom evolutionary algorithm. Includes a full experimental study comparing mutation rate, crossover probability, elitism, and wind conditions across 11 configurations.
 
-**Course:** Artificial Intelligence Fundamentals (IIA)
 
 ---
 
