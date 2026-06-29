@@ -1,0 +1,40 @@
+# Experiment configurations for NE-LunarLander
+# Each line defines one experiment (5 runs each)
+#
+# Columns:
+#   exp_id  mutation_prob  crossover_prob  elite_size  pop_size  generations  n_runs  wind  wind_power  turbulence_power
+#
+# exp_id          : unique experiment identifier
+# mutation_prob   : base probability of mutating each gene
+# crossover_prob  : probability of using crossover vs. cloning
+# elite_size      : number of elite individuals carried over (0 = no elitism)
+# pop_size        : number of individuals in the population
+# generations     : number of evolutionary generations to run
+# n_runs          : number of independent repetitions (each with a different seed)
+# wind            : 0 = no wind (Meta 1), 1 = wind enabled (Meta 2)
+# wind_power      : wind force magnitude (only relevant if wind=1)
+# turbulence_power: turbulence magnitude (only relevant if wind=1)
+
+# ── Meta 1: no wind ──────────────────────────────────────────────────────────
+
+# --- Elitism OFF (elite_size = 0) ---
+1   0.008   0.5   0   100   100   5   0   15.0   0.0
+2   0.050   0.5   0   100   100   5   0   15.0   0.0
+3   0.008   0.9   0   100   100   5   0   15.0   0.0
+4   0.050   0.9   0   100   100   5   0   15.0   0.0
+
+# --- Elitism ON (elite_size = 1) ---
+5   0.008   0.5   1   100   100   5   0   15.0   0.0
+6   0.050   0.5   1   100   100   5   0   15.0   0.0
+7   0.008   0.9   1   100   100   5   0   15.0   0.0
+8   0.050   0.9   1   100   100   5   0   15.0   0.0
+
+# ── Meta 2: with wind ────────────────────────────────────────────────────────
+# Baseline: best Meta 1 config (E6) applied directly to wind environment
+9   0.050   0.5   1   100   100   5   1   15.0   1.5
+
+# Higher mutation to handle increased stochasticity from wind
+10  0.100   0.5   1   100   150   5   1   15.0   1.5
+
+# Higher population and more generations for harder wind landscape
+11  0.050   0.9   0   150   150   5   1   15.0   1.5

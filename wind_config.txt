@@ -1,0 +1,12 @@
+# Wind experiment configurations (Meta 2)
+# Columns:
+#   exp_id  mutation_prob  crossover_prob  elite_size  pop_size  generations  n_runs  wind  wind_power  turbulence_power
+
+# E9  — best Meta 1 config (E6) applied directly to wind (baseline comparison)
+9   0.050   0.5   1   100   100   5   1   15.0   1.5
+
+# E10 — higher mutation to handle wind stochasticity, more generations
+10  0.100   0.5   1   100   150   5   1   15.0   1.5
+
+# E11 — high crossover, no elitism, bigger population
+11  0.050   0.9   0   150   150   5   1   15.0   1.5
